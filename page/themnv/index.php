@@ -10,7 +10,7 @@
             <!-- Form thêm nhân viên -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <form id="employeeForm" method="post" enctype="multipart/form-data">
+                    <form id="employeeForm" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                         <div class="form-group">
                             <label for="employeeName">Tên Nhân Viên</label>
                             <input type="text" class="form-control" name="tennv" placeholder="Nhập tên nhân viên" required>
@@ -19,14 +19,7 @@
                             <label for="address">Địa Chỉ</label>
                             <input type="text" class="form-control"  name="diachi" placeholder="Nhập địa chỉ" required>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Username</label>
-                            <input type="text" class="form-control" name="username" placeholder="Nhập số điện thoại" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Password</label>
-                            <input type="text" class="form-control"name="password" placeholder="Nhập password" required>
-                        </div>
+
                         <div class="form-group">
                             <label for="phone">Số Điện Thoại</label>
                             <input type="tel" class="form-control" name="sdt" placeholder="Nhập số điện thoại" required>

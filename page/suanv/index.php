@@ -22,11 +22,11 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Username</label>
-                            <input type="text" class="form-control" name="username" value="<?=$nhanvien[0]['Username'] ?>">
+                            <input type="text" class="form-control" name="username" value="<?=$nhanvien[0]['Username'] ?>" disabled>
                         </div>
                         <div class="form-group">
                             <label for="phone">Password</label>
-                            <input type="password" class="form-control"name="password" value="<?=$nhanvien[0]['Password'] ?>">
+                            <input type="text" class="form-control"name="password" value="<?=$nhanvien[0]['Password'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="phone">Số Điện Thoại</label>

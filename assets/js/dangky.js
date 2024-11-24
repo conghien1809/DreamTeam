@@ -28,3 +28,16 @@
         }
         return true;
     }
+
+    function validateForm() {
+        var username = document.forms["employeeForm"]["username"].value;
+        var password = document.forms["employeeForm"]["password"].value;
+        var sdt = document.forms["employeeForm"]["sdt"].value;
+
+        var rbsdt2 = /^(03|05|07|08|09)[0-9]{8}$/;
+        if (!sdt.match(rbsdt2)) {
+            alert("Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại hợp lệ bắt đầu bằng đầu số của Việt Nam (03, 05, 07, 08, 09).");
+            return false;
+        }
+        return true;
+    }
