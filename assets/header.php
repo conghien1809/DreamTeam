@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/blog.css">
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/dangky.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
@@ -24,8 +25,20 @@
     <header class="header">
       <div class="header-top">
         <ul>
-          <li><a class="dang-nhap" href="./sign-in.html">Đăng nhập</a></li>
-          <li><a class="dang-ky" href="./sign-up.html">Đăng ký</a></li>
+          <?php
+                if($_SESSION['dangnhap'] || $_SESSION['dangnhapql'] || $_SESSION['dangnhapnv']){
+                  echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> <b>Chào, </b>'. $_SESSION['username'].'</div>';
+                  echo '<li><a class="dang-ky" href="index.php?page=dangxuat">Đăng xuất</a></li>';
+                }
+                   else{
+                    echo '<li><a class="dang-nhap" href="index.php?page=dangnhap">Đăng nhập</a></li>';
+                    echo '<li><a class="dang-ky" href="index.php?page=dangky">Đăng ký</a></li>';
+                   }
+                   
+                 if($_SESSION['dangnhapnv']){
+                  echo '<li><a class="dang-ky" href="">Xem lịch làm</a></li>';
+                 } 
+                ?>    
         </ul>
       </div>
       <div class="inner-wrap">
@@ -36,7 +49,7 @@
         </div>
         <div class="inner-menu">
           <ul>
-            <li><a href="index.php?page=homepage">TRANG CHỦ</a></li>
+            <li><a href="index.php?page=trangchu">TRANG CHỦ</a></li>
             <li><a href="./products.html">SẢN PHẨM</a></li>
             <li><a href="./party-booking.html">DỊCH VỤ</a></li>
             <li><a href="index.php?page=intro">GIỚI THIỆU</a></li>
