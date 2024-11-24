@@ -8,7 +8,9 @@
     }else{
         $page='trangchu';
     }
-    //
+    if(isset($_GET['cate'])){
+        $cate=$_GET['cate'];
+    }
     if(file_exists("page/".$page."/index.php")){
         include("page/".$page."/index.php");
     }

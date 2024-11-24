@@ -55,6 +55,12 @@
             <li><a href="index.php?page=intro">GIỚI THIỆU</a></li>
             <li><a href="index.php?page=blog">BLOG</a></li>
             <li><a href="index.php?page=restaurant">NHÀ HÀNG</a></li>
+            <?php
+            if($_SESSION['dangnhapql']){
+              echo '<li><a href="index.php?page=quanly">QUẢN LÝ</a></li>';
+            }
+            ?>
+          </ul>
           </ul>
         </div>
         <div class="inner-cart">
