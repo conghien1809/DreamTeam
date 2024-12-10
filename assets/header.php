@@ -28,6 +28,12 @@
           <?php
                 if($_SESSION['dangnhap'] || $_SESSION['dangnhapql'] || $_SESSION['dangnhapnv']){
                   echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> <b>Chào, </b>'. $_SESSION['username'].'</div>';
+                  if($_SESSION['dangnhapnv']){
+                    echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
+                     <a href="index.php?page=xemca"><i class="fa fa-user-circle text-white" style="font-size: 24px; margin-left: 10px;"></i>
+                  </a></div>';
+                   } 
+                                   
                   echo '<li><a class="dang-ky" href="index.php?page=dangxuat">Đăng xuất</a></li>';
                 }
                    else{
@@ -35,9 +41,6 @@
                     echo '<li><a class="dang-ky" href="index.php?page=dangky">Đăng ký</a></li>';
                    }
                    
-                 if($_SESSION['dangnhapnv']){
-                  echo '<li><a class="dang-ky" href="">Xem lịch làm</a></li>';
-                 } 
                 ?>    
         </ul>
       </div>
