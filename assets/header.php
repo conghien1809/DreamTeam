@@ -52,9 +52,9 @@
             <li><a href="index.php?page=trangchu">TRANG CHỦ</a></li>
             <li><a href="./products.html">SẢN PHẨM</a></li>
             <li><a href="./party-booking.html">DỊCH VỤ</a></li>
-            <li><a href="index.php?page=intro">GIỚI THIỆU</a></li>
+            <li><a href="index.php?page=gioithieu">GIỚI THIỆU</a></li>
             <li><a href="index.php?page=blog">BLOG</a></li>
-            <li><a href="index.php?page=restaurant">NHÀ HÀNG</a></li>
+            <li><a href="index.php?page=nhahang">NHÀ HÀNG</a></li>
             <?php
             if($_SESSION['dangnhapql']){
               echo '<li><a href="index.php?page=quanly">QUẢN LÝ</a></li>';
