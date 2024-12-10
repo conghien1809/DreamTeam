@@ -5,14 +5,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                <li class="nav-item active">
+                        <a class="nav-link" href="#">Quản Lý Nhân Viên</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=calam">Quản Lý Ca Làm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản Lý Nguyên Liệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Quản Lý Nhân Viên</a>
+                        <a class="nav-link" href="#">Quản Lý Sản Phẩm</a>
                     </li>
                 </ul>
             </div>
@@ -20,8 +20,7 @@
     </nav>
 <section>
         <div class="container mt-5">
-            <h2 class="text-center">Quản Lý Nhân Viên</h2>         
-            <!-- Nút thêm nhân viên -->
+            <h2 class="text-center">QUẢN LÝ NHÂN VIÊN</h2> 
             <a href="index.php?page=themnv" class="btn btn-success mb-3">Thêm Nhân Viên</a>
 <?php
     include("class/classxuly.php");
