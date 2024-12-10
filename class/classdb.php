@@ -10,6 +10,7 @@
                 return $conn;
             }
         }
+        //Lê Quang Khoa
         public function xuatdulieu($sql){
             $link=$this->ketnoi();
             $arr=array();
@@ -75,34 +76,40 @@
             }
         } 
 
+        // Dương Đức Quý
+        public function laydulieu($sql)
+        {
+            $arr = array();
+            $link = $this->ketnoi();
+            $result = $link->query($sql);
+            if ($result->num_rows) {
+                while ($row = $result->fetch_assoc()) {
+                    $arr[] = $row;
+                }
+            }
+            return $arr; 
+        }
+
+        public function themCa($thu, $tenca, $thoigian)
+    {
+        $link = $this->ketnoi();
+        $sql = "INSERT INTO calam(thu,tenCa,thoigian) VALUES('$thu','$tenca','$thoigian');";
+        $result = $link->query($sql);
+        if ($result) {
+            echo"<script>alert('Thêm ca thành công.')</script>";
+        }
+        return $result;
     }
-/*
-public function dangnhap($tk, $mk, $loaiNguoiDung) {
-    $link = $this->ketnoi();
-    // Xác định bảng và cột dựa trên loại người dùng
-    if ($loaiNguoiDung === 'khachhang') {
-        $table = 'khachhang';
-        $idColumn = 'MaKH';
-    } elseif ($loaiNguoiDung === 'nhanvien') {
-        $table = 'nhanvien';
-        $idColumn = 'idnv';
-    } else {
-        return 0; // Trường hợp loại người dùng không hợp lệ
+    public function xoaCa($id){
+        $link = $this->ketnoi();
+        $sql = "delete from calam where maCa = '$id'";
+        $result = $link->query($sql);
+        
+        return $result;
+    }
+    //
+
     }
 
-    // Truy vấn SQL
-    $sql = "SELECT $idColumn FROM $table WHERE Username='$tk' AND Password='$mk'";
-    $result = $link->query($sql);
-
-    // Kiểm tra kết quả
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        return $row[$idColumn];
-    } else {
-        return 0; // Không tìm thấy người dùng
-    }
-}
-
-*/
 ?>
 

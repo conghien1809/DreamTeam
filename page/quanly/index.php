@@ -6,7 +6,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản Lý Ca Làm</a>
+                        <a class="nav-link" href="index.php?page=calam">Quản Lý Ca Làm</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quản Lý Nguyên Liệu</a>
