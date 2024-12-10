@@ -40,6 +40,45 @@
         public function suanhanvien($sql){
             return $this->suadulieu($sql);
         }
+        #########################
+        public function danhsachsanpham($id='')
+        {
+            if($id)
+                $sql="select * from sanpham where MaSP='$id'";
+            else
+                $sql="select * from sanpham";
+            return $this->xuatdulieu($sql);
+        }
+        
+
+        public function xoasanpham($id)
+        {
+            $sql="delete from sanpham where MaSP='$id'";
+            return $this->xoadulieu($sql);
+        }
+        public function selectcongty($value='')
+        {
+            $str='';
+            $sql="select * from danhmucsp";
+            $arr=$this->xuatdulieu($sql);
+            for($i=0;$i<count($arr);$i++)
+            {
+                if($arr[$i]["IDLoaiSP"]==$value)
+                    $str.='<option selected value="'.$arr[$i]["IDLoaiSP"].'">'.$arr[$i]["TenLoaiSP"].'</option>';
+                else
+                $str.='<option value="'.$arr[$i]["IDLoaiSP"].'">'.$arr[$i]["TenLoaiSP"].'</option>';
+            }
+            return $str;
+        }
+        public function themsanpham($sql)
+        {
+            return $this->themdulieu($sql);
+        }
+        public function suasanpham($sql)
+        {
+            return $this->suadulieu($sql);
+        }
+
     }
 
 ?>

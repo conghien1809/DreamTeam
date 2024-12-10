@@ -66,6 +66,17 @@
             }
         }
 
+        public function themdulieu($sql){
+            $link=$this->ketnoi();
+            if($link->query($sql)){
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public function suadulieu($sql){
             $link=$this->ketnoi();
             if($link->query($sql)){

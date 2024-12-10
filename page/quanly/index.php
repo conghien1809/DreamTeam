@@ -12,7 +12,7 @@
                         <a class="nav-link" href="index.php?page=calam">Quản Lý Ca Làm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản Lý Sản Phẩm</a>
+                        <a class="nav-link" href="index.php?page=quanlysanpham">Quản Lý Sản Phẩm</a>
                     </li>
                 </ul>
             </div>
