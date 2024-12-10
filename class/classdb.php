@@ -42,6 +42,8 @@
                 $sql = "select MaNV from nhanvien where Username='$tk' and Password='$mk' and MaLoai=1";
             } elseif ($loai === 2) {
                 $sql = "select MaNV from nhanvien where Username='$tk' and Password='$mk' and MaLoai=2";
+            } elseif ($loai === 3) {
+                $sql = "select MaNV from nhanvien where Username='$tk' and Password='$mk' and MaLoai=3";
             } else {
                 return 0;
             }

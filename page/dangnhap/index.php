@@ -7,8 +7,9 @@
         $tkmk = $obj->dangnhap($tk, $mk);       
         $tkmkql = $obj->dangnhap($tk, $mk, 1); 
         $tkmknv = $obj->dangnhap($tk, $mk, 2);
+        $nvbep = $obj->dangnhap($tk, $mk, 3);
           
-        if ($tkmk || $tkmkql || $tkmknv) {
+        if ($tkmk || $tkmkql || $tkmknv || $nvbep) {
             if ($tkmk) {
                 $_SESSION['dangnhap'] = $tkmk;
                 $_SESSION['username'] = $tk;
@@ -17,8 +18,12 @@
                 $_SESSION['dangnhapql'] = $tkmkql;
                 $_SESSION['username'] = $tk;
                 header("location:index.php?page=quanly");
-            } else {
+            } elseif ($tkmknv) {
                 $_SESSION['dangnhapnv'] = $tkmknv;
+                $_SESSION['username'] = $tk;
+                header("location:index.php?page=trangchu");
+            } elseif ($nvbep) {
+                $_SESSION['dangnhapbep'] = $nvbep;
                 $_SESSION['username'] = $tk;
                 header("location:index.php?page=trangchu");
             }

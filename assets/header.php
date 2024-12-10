@@ -26,13 +26,20 @@
       <div class="header-top">
         <ul>
           <?php
-                if($_SESSION['dangnhap'] || $_SESSION['dangnhapql'] || $_SESSION['dangnhapnv']){
+                if($_SESSION['dangnhap'] || $_SESSION['dangnhapql'] || $_SESSION['dangnhapnv'] || $_SESSION['dangnhapbep']){
                   echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> <b>Chào, </b>'. $_SESSION['username'].'</div>';
                   if($_SESSION['dangnhapnv']){
                     echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
                      <a href="index.php?page=xemca"><i class="fa fa-user-circle text-white" style="font-size: 24px; margin-left: 10px;"></i>
                   </a></div>';
-                   } 
+                   }
+                   elseif($_SESSION['dangnhapbep']){
+                    echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
+                    <a href="index.php?page=xemdon">
+                        <i class="fa fa-file-alt text-white" style="font-size: 20px; margin-left: 10px; margin-top: 15px;"></i>
+                    </a>
+                      </div>';
+                   }                  
                                    
                   echo '<li><a class="dang-ky" href="index.php?page=dangxuat">Đăng xuất</a></li>';
                 }
