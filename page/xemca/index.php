@@ -5,17 +5,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item active">
-                        <a class="nav-link" href="#">Ca Làm</a>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Thông tin cá nhân</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Đổi mật khẩu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=khachhang">Quản Lý Khách Hàng</a>
+                <li class="nav-item active">
+                        <a class="nav-link" href="#">Xem ca làm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản lý Đơn Hàng</a>
+                        <a class="nav-link" href="index.php?page=khachhang">Quản lý khách hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quản lý đơn hàng</a>
                     </li>
                 </ul>
             </div>
