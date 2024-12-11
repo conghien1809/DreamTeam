@@ -44,6 +44,13 @@
     function validateRegistrationForm() {
         var sdt = document.forms["employeeForm"]["sdt"].value;
         var rbsdt = /^(03|05|07|08|09)[0-9]{8}$/; 
+        var tennv = document.forms["employeeForm"]["tennv"].value;
+        var rbtennv = /^[a-zA-Z\s]+$/;
+
+        if (!tennv.match(rbtennv)) {
+            alert("Tên nhân viên không hợp lệ. Tên chỉ được chứa chữ cái và khoảng trắng.");
+            return false;
+        }
 
         if (!sdt.match(rbsdt)) {
             alert("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng 03, 05, 07, 08 hoặc 09 và có 10 chữ số.");

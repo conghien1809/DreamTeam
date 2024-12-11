@@ -119,13 +119,20 @@
 
     <script>
         function validateRegistrationForm() {
+    var tendn = document.forms["registrationForm"]["hoten"].value;
     var tendn = document.forms["registrationForm"]["tendn"].value;
     var matkhau = document.forms["registrationForm"]["mk"].value;
     var xacnhanmk = document.forms["registrationForm"]["nlmk"].value;
     var sdt = document.forms["registrationForm"]["sdt"].value;
 
+    var rbhoten = /^[a-zA-Z\s]+$/;
     var rbmk = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     var rbsdt = /^(03|05|07|08|09)[0-9]{8}$/;
+
+    if (!hoten.match(rbhoten)) {
+            alert("Tên không hợp lệ. Tên chỉ được chứa chữ cái và khoảng trắng.");
+            return false;
+        }
 
     if (tendn.length < 8) {
         alert("Tên đăng nhập phải có ít nhất 8 ký tự.");
