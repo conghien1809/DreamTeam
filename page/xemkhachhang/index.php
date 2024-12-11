@@ -5,7 +5,7 @@
 ?>
 <section>
         <div class="container mt-5">
-            <h2 class="text-center">Cập Nhật Nhân Viên</h2>
+            <h2 class="text-center">Thông Tin Khách Hàng</h2>
     
             <!-- Form thêm nhân viên -->
             <div class="card mb-4">

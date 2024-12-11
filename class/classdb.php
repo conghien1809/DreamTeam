@@ -1,5 +1,6 @@
 <?php
     class database{
+
         private function ketnoi(){
             $conn=new mysqli("localhost","root","","thedreamteam");
             if($conn->connect_error){
