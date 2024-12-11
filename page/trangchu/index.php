@@ -1,409 +1,96 @@
-    <!-- Section-->
-    <section>
-      <div id="demo" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="assets/images/banner1.png"
-              alt=""
-              width="1400"
-              height="700"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="assets/images/banner2.jpg"
-              alt=""
-              width="1400"
-              height="700"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="assets/images/banner3.jpg"
-              alt=""
-              width="1400"
-              height="700"
-            />
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
+<?php
+$db = new database();
+$sql = "SELECT * FROM sanpham";
+$products = $db->xuatdulieu($sql);
+?>
+<section>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/banner1.png" alt="" width="1400" height="700" />
       </div>
-      <div class="text-center pt-4">
-        <h2><strong>ĂN UỐNG THẢ GA</strong></h2>
+      <div class="carousel-item">
+        <img src="assets/images/banner2.jpg" alt="" width="1400" height="700" />
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div
-            id="myCarousel"
-            class="carousel slide"
-            data-ride="carousel"
-            data-interval="0"
-          >
-            <ol class="carousel-indicators">
-              <li
-                data-target="#myCarousel"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="item carousel-item active">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/hamburger.jfif"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Hamburger</h4>
-                        <p class="item-price"><span>59.900 VND</span></p>
-                        <div class="star-rating text-warning">
-                          <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="product-detail.html" class="btn btn-primary"
-                          >Xem thêm</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/chaoyenmach.jpg"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Cháo yến mạch</h4>
-                        <p class="item-price">
-                          <strike>100.000 VND</strike> <span>46.900 VND</span>
-                        </p>
-                        <div class="star-rating">
-                          <ul class="list-inline text-warning">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/banhmi.jpg"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Bánh mì kẹp thịt</h4>
-                        <p class="item-price"><span>35.000 VND</span></p>
-                        <div class="star-rating">
-                          <ul class="list-inline text-warning">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/pizza.jpg"
-                          class="img-fluid"
-                          alt="Macbook"
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Pizza</h4>
-                        <p class="item-price">
-                          <strike>119.300 VND</strike> <span>96.300 VND</span>
-                        </p>
-                        <div class="star-rating">
-                          <ul class="list-inline text-warning">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star-half-o"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item carousel-item">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/pizza.jpg"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Pizza</h4>
-                        <p class="item-price">
-                          <strike>109.300 VND</strike> <span>96.300 VND</span>
-                        </p>
-                        <div class="star-rating">
-                          <ul class="list-inline text-warning">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star-o"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/banhmi.jpg"
-                          class="img-fluid"
-                          alt=""
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Bánh mì kẹp thịt</h4>
-                        <p class="item-price"><span>35.000 VND</span></p>
-                        <div class="star-rating text-warning">
-                          <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
-                      <div class="img-box">
-                        <img
-                          src="assets/images/chaoyenmach.jpg"
-                          class="img-fluid"
-                          alt="Speaker"
-                        />
-                      </div>
-                      <div class="thumb-content">
-                        <h4>Cháo yến mạch</h4>
-                        <p class="item-price">
-                          <strike>80.000 VND</strike> <span>38.000 VND</span>
-                        </p>
-                        <div class="star-rating">
-                          <ul class="list-inline text-warning">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <a href="" class="btn btn-primary">Xem thêm</a>
-                      </div>
-                    </div>
-                  </div>
+      <div class="carousel-item">
+        <img src="assets/images/banner3.jpg" alt="" width="1400" height="700" />
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
 
+  <!-- Sản phẩm -->
+  <div class="text-center pt-4">
+    <h2><strong>ĂN UỐNG THẢ GA</strong></h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <ol class="carousel-indicators">
+          <!-- Thêm các indicator động dựa trên số lượng slide -->
+          <?php 
+          $totalSlides = ceil(count($products) / 4);
+          for ($i = 0; $i < $totalSlides; $i++) {
+            echo '<li data-target="#myCarousel" data-slide-to="' . $i . '" class="' . ($i == 0 ? 'active' : '') . '"></li>';
+          }
+          ?>
+        </ol>
+        <div class="carousel-inner">
+          <!-- Lặp qua sản phẩm và nhóm chúng thành 4 sản phẩm mỗi slide -->
+          <?php 
+          $chunkedProducts = array_chunk($products, 4); // Chia sản phẩm thành các nhóm 4
+          foreach ($chunkedProducts as $index => $productChunk) { ?>
+            <div class="carousel-item <?php echo $index == 0 ? 'active' : ''; ?>">
+              <div class="row">
+                <?php foreach ($productChunk as $product) { ?>
                   <div class="col-sm-3">
                     <div class="thumb-wrapper">
-                      <span class="wish-icon"
-                        ><i class="fa fa-heart-o"></i
-                      ></span>
+                      <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                       <div class="img-box">
-                        <img
-                          src="assets/images/hamburger.jfif"
-                          class="img-fluid"
-                          alt=""
-                        />
+                        <img src="assets/images/<?php echo $product['img']; ?>" class="img-fluid" alt="" />
                       </div>
                       <div class="thumb-content">
-                        <h4>Hamburger</h4>
-                        <p class="item-price">
-                          <strike>102.700 VND</strike> <span>68.800 VND</span>
-                        </p>
+                        <h4><?php echo $product['TenSP']; ?></h4>
+                        <p class="item-price"><span><?php echo number_format($product['dongia'], 0, ',', '.'); ?> VND</span></p>
                         <div class="star-rating text-warning">
                           <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li class="list-inline-item">
-                              <i class="fa fa-star"></i>
-                            </li>
+                            <?php for ($j = 0; $j < 5; $j++) { ?>
+                              <li class="list-inline-item">
+                                <i class="fa fa-star"></i>
+                              </li>
+                            <?php } ?>
                           </ul>
                         </div>
-                        <a href="product-detail.html" class="btn btn-primary"
-                          >Xem thêm</a
-                        >
+                        <a href="index.php?page=chitietsanpham&cate=<?php echo $product['MaSP']; ?>" class="btn btn-primary">Xem thêm</a>
                       </div>
                     </div>
                   </div>
-                </div>
+                <?php } ?>
               </div>
             </div>
-
-            <a
-              class="carousel-control-prev"
-              href="#myCarousel"
-              data-slide="prev"
-            >
-              <i class="fa fa-angle-left"></i>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#myCarousel"
-              data-slide="next"
-            >
-              <i class="fa fa-angle-right"></i>
-            </a>
-          </div>
+          <?php } ?>
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
       </div>
-      <div class="text-center">
+    </div>
+  </div>
+
+  <div class="text-center">
         <h2><strong>ĐÔI NÉT VỀ THE DREAM</strong></h2>
       </div>
       <div class="row bg-light mt-3">
@@ -480,4 +167,4 @@
           </div>
         </div>
       </div>
-    </section>
+</section>

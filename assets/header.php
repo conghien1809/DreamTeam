@@ -33,7 +33,8 @@
                     echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
                      <a href="index.php?page=xemca"><i class="fa fa-user-circle text-white" style="font-size: 24px; margin-left: 10px;"></i>
                   </a></div>';
-          } elseif ($_SESSION['dangnhapbep']) {
+          } 
+          elseif ($_SESSION['dangnhapbep']) {
             echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
                     <a href="index.php?page=xemdon">
                         <i class="fa fa-file-alt text-white" style="font-size: 20px; margin-left: 10px; margin-top: 15px;"></i>
