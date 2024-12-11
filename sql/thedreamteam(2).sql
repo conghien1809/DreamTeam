@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2024 lúc 07:24 AM
+-- Thời gian đã tạo: Th12 11, 2024 lúc 05:02 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -39,12 +39,36 @@ CREATE TABLE `calam` (
 --
 
 INSERT INTO `calam` (`maCa`, `thu`, `tenCa`, `thoigian`) VALUES
-(619, 3, 'a', 'b'),
 (621, 4, 'ccc', 'ccc'),
 (625, 5, 'a', 'a'),
 (626, 5, 'a', 'a'),
 (628, 7, 'a', 'a'),
-(629, 4, 'ac', 'ac');
+(629, 4, 'ac', 'ac'),
+(0, 2, 'Bán hàng', '11h00-12h00');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chitietdontiec`
+--
+
+CREATE TABLE `chitietdontiec` (
+  `MaDon` int(11) NOT NULL,
+  `MaSP` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitietdontiec`
+--
+
+INSERT INTO `chitietdontiec` (`MaDon`, `MaSP`) VALUES
+(6762, 1),
+(6763, 1),
+(6765, 1),
+(6759, 2),
+(6760, 33),
+(6761, 33),
+(6764, 33);
 
 -- --------------------------------------------------------
 
@@ -65,7 +89,9 @@ CREATE TABLE `chitiethoadon` (
 INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `soluong`) VALUES
 ('HD67592342cbe13', 1, 1),
 ('HD6759269084632', 2, 3),
-('HD6759269084632', 5, 4);
+('HD6759269084632', 5, 4),
+('HD675950298a304', 2, 1),
+('HD675950298a304', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -93,6 +119,49 @@ INSERT INTO `danhmucsp` (`IDLoaiSP`, `TenLoaiSP`, `mota`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `dontiec`
+--
+
+CREATE TABLE `dontiec` (
+  `MaDon` int(11) NOT NULL,
+  `HoTen` varchar(40) NOT NULL,
+  `SoDienThoai` varchar(40) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `SoLuongKhach` int(11) NOT NULL,
+  `NgayDat` date NOT NULL,
+  `GhiChu` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `dontiec`
+--
+
+INSERT INTO `dontiec` (`MaDon`, `HoTen`, `SoDienThoai`, `Email`, `SoLuongKhach`, `NgayDat`, `GhiChu`) VALUES
+(1, 'k', '0000', 'nhanvien2@gmal.com', 3, '2024-12-03', 'lll'),
+(2, 'k', '0229292', 'nhanvien2@gmal.com', 3, '2024-12-12', 'llll'),
+(3, 'k', '000000', 'traudhjd@đkdk.com', 6, '2024-12-12', 'kkkk'),
+(4, 'k', '102929', 'nhanvien2@gmal.com', 3, '2024-12-03', '333'),
+(5, 'k', '0000', 'traudhjd@đkdk.com', 3, '2024-12-03', 'llll'),
+(6, 'k', '0987', 'traudhjd@đkdk.com', 2, '2222-03-31', '3333'),
+(7, 'k', '029299292', 'nhanvien2@gmal.com', 3, '2024-12-12', '12233'),
+(8, 'k', '0912838', 'nhanvien2@gmal.com', 4, '2024-12-12', 'jjjjj'),
+(9, 'k', '09282727227', 'nhanvien2@gmal.com', 3, '2024-12-13', 'kkkk'),
+(10, '', '', '', 0, '0000-00-00', ''),
+(11, '', '', '', 0, '0000-00-00', ''),
+(12, 'k', '000', 'nhanvien2@gmal.com', 3, '2024-12-13', 'kkkkkk'),
+(13, '', '', '', 0, '0000-00-00', ''),
+(14, 'k', '0928737337', 'nhanvien2@gmal.com', 5, '2024-12-27', '2dđ'),
+(15, '', '', '', 0, '2024-12-11', ''),
+(16, 'k', 'jjsjjsjs', 'nhanvien2@gmal.com', 4, '2024-12-19', 'kkkkk'),
+(17, '', '', '', 0, '2024-12-11', ''),
+(18, 'k', 'jjsjjsjs', 'nhanvien2@gmal.com', 3, '2024-12-26', 'kkkk'),
+(19, 'Lrwtwwy', '010911919', 'khoa110303@đkdk.com', 3, '2024-12-19', 'hdhdhd'),
+(20, 'Lrwtwwy', 'jjsjjsjs', 'nhanvien2@gmal.com', 3, '2024-12-27', 'dlđl'),
+(21, 'Lrwtwwy', '098', 'nhanvien2@gmal.com', 4, '2024-12-21', 'wwdd');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `hoadon`
 --
 
@@ -109,7 +178,31 @@ CREATE TABLE `hoadon` (
 
 INSERT INTO `hoadon` (`MaHD`, `createdAt`, `status`, `MaKH`) VALUES
 ('HD67592342cbe13', '2024-12-11 05:29:38', 1, 1),
-('HD6759269084632', '2024-12-11 05:43:44', 1, 1);
+('HD6759269084632', '2024-12-11 05:43:44', 1, 1),
+('HD675950298a304', '2024-12-11 08:41:13', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `ingredients`
+--
+
+CREATE TABLE `ingredients` (
+  `ingredient_ID` varchar(7) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `unit` varchar(10) NOT NULL,
+  `shelf_life` int(11) NOT NULL,
+  `image_path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `ingredients`
+--
+
+INSERT INTO `ingredients` (`ingredient_ID`, `name`, `price`, `unit`, `shelf_life`, `image_path`) VALUES
+('NVL0001', 'Rau xà lách', 110000.00, 'kg', 7, 'assets/images/ingredients/lettuce.jpg'),
+('NVL0002', 'Cà chua', 12000.00, 'kg', 7, 'assets/images/ingredients/tomato.jpg');
 
 -- --------------------------------------------------------
 
@@ -132,7 +225,7 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`MaKH`, `TenKH`, `Username`, `Password`, `SDT`, `Email`, `DiaChi`) VALUES
-(1, 'Hồ Văn A', 'khachhang', '123', '034356372', 'khachhang123@gmal.com', '24 Lê Văn Lương, quận 7, TP.HCM'),
+(1, 'Hồ Văn A', 'khachhang', '123', '034356372', 'khachhang123@gmal.com', 'Phú Yen'),
 (2, 'Lê Quang Khoa', 'quangkhoa11', '123', '0986356372', 'khoa110303@gmail.com', 'Bình Định'),
 (3, 'Nguyễn Công Hiến', 'conghien', '123', '0912347283', 'conghien@gmail.com', 'TP.HCM'),
 (4, 'Trần Chính', 'tranchinh', '123', '0927348291', 'tranchinh@gmail.com', 'TP.HCM'),
@@ -141,7 +234,11 @@ INSERT INTO `khachhang` (`MaKH`, `TenKH`, `Username`, `Password`, `SDT`, `Email`
 (7, 'Trịnh Trần Phương Tuấn', 'jack97', '123', '0972536721', 'j97@gmail.com', 'Bến Tre'),
 (8, 'Hà Anh Tuấn', 'anhtuan', '123', '0983647384', 'haanhtuan@gmail.com', 'Bình Dương'),
 (9, 'Nguyễn Trường Giang', 'truonggiang', '123', '0937463273', 'truonggiangk17iuh@gmail.com', 'TP.HCM'),
-(10, 'Mỹ Duyên', 'myduyen12', 'Duyen*1234', '0374839234', 'myduyen@gmail.com', 'Đà Nẵng');
+(10, 'Mỹ Duyên', 'myduyen12', 'Duyen*1234', '0374839234', 'myduyen@gmail.com', 'Đà Nẵng'),
+(11, 'Lê Văn B', 'vanb12736', 'Vanb12345*', '0921117267', 'traudhjd@đkdk.com', 'Bình Dương'),
+(12, 'Lê Quang Ka', 'quangkhoa23344', '12345', '0998883432', 'nhanvien2@gmal.com', 'Quận888'),
+(13, 'ss$', 'quangkhoa222222222', '2222', '0981501410', 'nhanvien2@gmal.com', 'Bình Định'),
+(14, 'Khoa', 'quangkhoabinhdinh', 'Khoa1234*', '0981501410', 'traudhjd@đkdk.com', 'Bình Dương');
 
 -- --------------------------------------------------------
 
@@ -187,7 +284,57 @@ CREATE TABLE `nhanvien` (
 INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Username`, `Password`, `MaLoai`, `SDT`, `Email`, `DiaChi`) VALUES
 (1, 'Quản Lý Dream', 'quanly1', '123', 1, '0986356372', 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
 (4, 'Nguyễn Văn A', 'nhanvienbanhang', '123', 2, '0346356372', 'nhanvien@gmal.com', '26 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
-(5, 'Nhân viên Bếp', 'nhanvienbep', '123', 3, '0986356372', 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM');
+(5, 'Nhân viên Bếp', 'nhanvienbep', '123', 3, '0986356372', 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
+(6, 'Lê Quang Khoa', 'nv6', '123', 2, '11111111111', 'jjhhhjkk', 'Bình Định'),
+(7, 'Đức Quý', 'nv7', '123', 3, '0378930081', 'nhanvien2@gmal.com', 'Bình Dương'),
+(8, 'Khoa', 'nv8', '123', 2, '0981501410', 'nhanvien2@gmal.com', '');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_ID` varchar(6) NOT NULL,
+  `order_date` date NOT NULL DEFAULT curdate(),
+  `status` varchar(20) NOT NULL,
+  `completion_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`order_ID`, `order_date`, `status`, `completion_date`) VALUES
+('DH0001', '2024-11-01', 'Hoàn thành', '2024-11-05'),
+('DH0002', '2024-11-02', 'Đang giao hàng', NULL),
+('DH0003', '2024-11-03', 'Chờ xử lý', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_items`
+--
+
+CREATE TABLE `order_items` (
+  `item_ID` int(11) NOT NULL,
+  `order_ID` varchar(6) DEFAULT NULL,
+  `ingredient_ID` varchar(20) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_items`
+--
+
+INSERT INTO `order_items` (`item_ID`, `order_ID`, `ingredient_ID`, `name`, `quantity`) VALUES
+(1, 'DH0001', 'NVL0001', 'Rau xà lách', 10),
+(2, 'DH0001', 'NVL0002', 'Cà chua', 5),
+(3, 'DH0002', 'NVL0001', 'Rau xà lách', 10),
+(4, 'DH0002', 'NVL0002', 'Cà chua', 5),
+(5, 'DH0003', 'NVL0001', 'Rau xà lách', 30);
 
 -- --------------------------------------------------------
 
@@ -244,9 +391,38 @@ INSERT INTO `sanpham` (`MaSP`, `IDLoaiSP`, `TenSP`, `img`, `dongia`, `MotaSP`) V
 (33, 5, 'Pepsi', 'Pepsi.jpg', 19000, 'Pepsi lon'),
 (34, 5, 'Trà Chanh Lipton (Vừa)', 'Trà Chanh Lipton (Vừa).png', 12000, 'Trà Chanh Lipton (Vừa)');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `stock`
+--
+
+CREATE TABLE `stock` (
+  `ingredient_ID` varchar(7) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `expiry_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `stock`
+--
+
+INSERT INTO `stock` (`ingredient_ID`, `name`, `stock`, `expiry_date`) VALUES
+('NVL0001', 'Cà chua', 5, '2024-10-15'),
+('NVL0002', 'Rau xà lách', 3, '2024-11-10'),
+('NVL0001', 'Cà chua', 7, '2024-12-20');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `chitietdontiec`
+--
+ALTER TABLE `chitietdontiec`
+  ADD PRIMARY KEY (`MaDon`),
+  ADD KEY `MaSP` (`MaSP`);
 
 --
 -- Chỉ mục cho bảng `chitiethoadon`
@@ -261,11 +437,23 @@ ALTER TABLE `danhmucsp`
   ADD PRIMARY KEY (`IDLoaiSP`);
 
 --
+-- Chỉ mục cho bảng `dontiec`
+--
+ALTER TABLE `dontiec`
+  ADD PRIMARY KEY (`MaDon`);
+
+--
 -- Chỉ mục cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHD`),
   ADD KEY `MaKH` (`MaKH`);
+
+--
+-- Chỉ mục cho bảng `ingredients`
+--
+ALTER TABLE `ingredients`
+  ADD PRIMARY KEY (`ingredient_ID`);
 
 --
 -- Chỉ mục cho bảng `khachhang`
@@ -289,6 +477,19 @@ ALTER TABLE `nhanvien`
   ADD KEY `MaLoai` (`MaLoai`);
 
 --
+-- Chỉ mục cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_ID`);
+
+--
+-- Chỉ mục cho bảng `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`item_ID`),
+  ADD KEY `order_ID` (`order_ID`);
+
+--
 -- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
@@ -300,16 +501,28 @@ ALTER TABLE `sanpham`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `chitietdontiec`
+--
+ALTER TABLE `chitietdontiec`
+  MODIFY `MaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6766;
+
+--
 -- AUTO_INCREMENT cho bảng `danhmucsp`
 --
 ALTER TABLE `danhmucsp`
   MODIFY `IDLoaiSP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT cho bảng `dontiec`
+--
+ALTER TABLE `dontiec`
+  MODIFY `MaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `loainv`
@@ -321,7 +534,13 @@ ALTER TABLE `loainv`
 -- AUTO_INCREMENT cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
-  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `MaNV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `item_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
@@ -334,6 +553,12 @@ ALTER TABLE `sanpham`
 --
 
 --
+-- Các ràng buộc cho bảng `chitietdontiec`
+--
+ALTER TABLE `chitietdontiec`
+  ADD CONSTRAINT `chitietdontiec_ibfk_1` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
+
+--
 -- Các ràng buộc cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
@@ -344,6 +569,12 @@ ALTER TABLE `hoadon`
 --
 ALTER TABLE `nhanvien`
   ADD CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`MaLoai`) REFERENCES `loainv` (`MaLoai`);
+
+--
+-- Các ràng buộc cho bảng `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_ID`) REFERENCES `orders` (`order_ID`) ON DELETE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `sanpham`
