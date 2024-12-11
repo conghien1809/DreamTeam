@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/carousel.css" />
     <link rel="stylesheet" href="assets/css/blog.css">
-    <link rel="stylesheet" href="assets/css/chitietsanpham.css" />
+    <link rel="stylesheet" href="assets/css/dichvu.css">
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/dangky.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
@@ -32,9 +33,8 @@
                     echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
                      <a href="index.php?page=xemca"><i class="fa fa-user-circle text-white" style="font-size: 24px; margin-left: 10px;"></i>
                   </a></div>';
-                   }
-                   elseif($_SESSION['dangnhapbep']){
-                    echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
+          } elseif ($_SESSION['dangnhapbep']) {
+            echo '<div style="color: #efefef; line-height: 50px; padding-right: 10px;"> 
                     <a href="index.php?page=xemdon">
                         <i class="fa fa-file-alt text-white" style="font-size: 20px; margin-left: 10px; margin-top: 15px;"></i>
                     </a>
@@ -61,7 +61,7 @@
           <ul>
             <li><a href="index.php?page=trangchu">TRANG CHỦ</a></li>
             <li><a href="index.php?page=sanpham">SẢN PHẨM</a></li>
-            <li><a href="./party-booking.html">DỊCH VỤ</a></li>
+            <li><a href="index.php?page=dichvu">DỊCH VỤ</a></li>
             <li><a href="index.php?page=gioithieu">GIỚI THIỆU</a></li>
             <li><a href="index.php?page=blog">BLOG</a></li>
             <li><a href="index.php?page=nhahang">NHÀ HÀNG</a></li>
@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="inner-cart">
-          <a href="index.php?page=giohang"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </header>
