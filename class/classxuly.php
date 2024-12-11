@@ -79,6 +79,19 @@
             return $this->suadulieu($sql);
         }
 
+        #########################################3
+
+        public function danhsachkhachhang($id =''){
+            if($id){
+                $sql="select * from khachhang where MaKH='$id'";
+            }else{
+                $sql="select * from khachhang";
+            }
+            return $this->xuatdulieu($sql);
+        }
+        
+        
+
     }
 
 ?>

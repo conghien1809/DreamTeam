@@ -9,13 +9,13 @@
                         <a class="nav-link" href="#">Thông tin cá nhân</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Đổi mật khẩu</a>
+                        <a class="nav-link" href="index.php?page=doimatkhau">Đổi mật khẩu</a>
                     </li>
                 <li class="nav-item active">
                         <a class="nav-link" href="#">Xem ca làm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=khachhang">Quản lý khách hàng</a>
+                        <a class="nav-link" href="index.php?page=quanlykhachhang">Quản lý khách hàng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quản lý đơn hàng</a>
