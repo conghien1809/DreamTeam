@@ -6,7 +6,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                        <a class="nav-link" href="#">Quản Lý Nhân Viên</a>
+                        <a class="nav-link" href="index.php?page=quanly">Quản Lý Nhân Viên</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=calam">Quản Lý Ca Làm</a>
@@ -15,7 +15,7 @@
                         <a class="nav-link" href="index.php?page=quanlysanpham">Quản Lý Sản Phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=nguyenvatlieu">Quản Lý Nguyên Vật Liệu</a>
+                        <a class="nav-link" href="index.php?page=restaurant">Quản Lý Nguyên Vật Liệu</a>
                     </li>
                 </ul>
             </div>

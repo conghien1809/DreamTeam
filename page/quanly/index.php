@@ -15,7 +15,7 @@
                         <a class="nav-link" href="index.php?page=quanlysanpham">Quản Lý Sản Phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=nguyenvatlieu">Quản Lý Nguyên Vật Liệu</a>
+                        <a class="nav-link" href="index.php?page=restaurant">Quản Lý Nguyên Vật Liệu</a>
                     </li>
                 </ul>
             </div>
