@@ -35,7 +35,7 @@
                     <p class="text-center text-danger">Vui lòng nhập đầy đủ thông tin để đăng ký tài khoản</p>
                     <hr>
 
-                    <form id="registrationForm" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <form id="registrationForm" method="post" enctype="multipart/form-data" onsubmit="return validateRegistrationForm()">
                         <div class="form-group">
                             <label><b>Họ và tên:</b></label>
                             <input type="text" class="form-control" name="hoten" placeholder="Họ và tên" required>
@@ -80,10 +80,10 @@
                         <div class="text-center"><input type="submit" name="btnDangKy" value="Đăng ký"></div>
 
                         </form>
-                    <div class="text-center mt-3">Bạn đã có tài khoản? <a class="text-danger" href="./danhnhap.html">Đăng nhập tại đây!</a></div>
+                    <div class="text-center mt-3">Bạn đã có tài khoản? <a class="text-danger" href="index.php?page=dangnhap">Đăng nhập tại đây!</a></div>
                 </div>
                 <div class="text-center mt-3 pb-3">
-                    <a href="./trangchu.html"><button type="button" class="btn btn-danger back-btn">Quay lại trang chủ</button></a>
+                    <a href="index.php?page=trangchu"><button type="button" class="btn btn-danger back-btn">Quay lại trang chủ</button></a>
                 </div>
             </div>
         </div>
@@ -116,3 +116,37 @@
     color: red;
 }
     </style>
+
+    <script>
+        function validateRegistrationForm() {
+    var tendn = document.forms["registrationForm"]["tendn"].value;
+    var matkhau = document.forms["registrationForm"]["mk"].value;
+    var xacnhanmk = document.forms["registrationForm"]["nlmk"].value;
+    var sdt = document.forms["registrationForm"]["sdt"].value;
+
+    var rbmk = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    var rbsdt = /^(03|05|07|08|09)[0-9]{8}$/;
+
+    if (tendn.length < 8) {
+        alert("Tên đăng nhập phải có ít nhất 8 ký tự.");
+        return false;
+    }
+
+    if (!matkhau.match(rbmk)) {
+        alert("Mật khẩu phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ in hoa, 1 chữ số và 1 ký tự đặc biệt.");
+        return false;
+    }
+
+    if (matkhau !== xacnhanmk) {
+        alert("Xác nhận mật khẩu không trùng khớp.");
+        return false;
+    }
+
+    if (!sdt.match(rbsdt)) {
+        alert("Số điện thoại không hợp lệ.");
+        return false;
+    }
+
+    return true;
+}
+    </script>

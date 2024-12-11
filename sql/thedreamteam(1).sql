@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 10, 2024 lúc 12:54 PM
+-- Thời gian đã tạo: Th12 11, 2024 lúc 07:24 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -49,6 +49,27 @@ INSERT INTO `calam` (`maCa`, `thu`, `tenCa`, `thoigian`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `chitiethoadon`
+--
+
+CREATE TABLE `chitiethoadon` (
+  `MaHD` varchar(26) NOT NULL,
+  `MaSP` int(11) NOT NULL,
+  `soluong` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitiethoadon`
+--
+
+INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `soluong`) VALUES
+('HD67592342cbe13', 1, 1),
+('HD6759269084632', 2, 3),
+('HD6759269084632', 5, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `danhmucsp`
 --
 
@@ -72,6 +93,27 @@ INSERT INTO `danhmucsp` (`IDLoaiSP`, `TenLoaiSP`, `mota`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `hoadon`
+--
+
+CREATE TABLE `hoadon` (
+  `MaHD` varchar(26) NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` int(1) DEFAULT NULL CHECK (`status` = 0 or `status` = 1),
+  `MaKH` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`MaHD`, `createdAt`, `status`, `MaKH`) VALUES
+('HD67592342cbe13', '2024-12-11 05:29:38', 1, 1),
+('HD6759269084632', '2024-12-11 05:43:44', 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `khachhang`
 --
 
@@ -80,7 +122,7 @@ CREATE TABLE `khachhang` (
   `TenKH` varchar(50) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
-  `SDT` int(11) NOT NULL,
+  `SDT` varchar(20) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `DiaChi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -90,7 +132,16 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`MaKH`, `TenKH`, `Username`, `Password`, `SDT`, `Email`, `DiaChi`) VALUES
-(1, 'Hồ Văn A', 'khachhang', '123', 343556372, 'khachhang123@gmal.com', '24 Lê Văn Lương, quận 7, TP.HCM');
+(1, 'Hồ Văn A', 'khachhang', '123', '034356372', 'khachhang123@gmal.com', '24 Lê Văn Lương, quận 7, TP.HCM'),
+(2, 'Lê Quang Khoa', 'quangkhoa11', '123', '0986356372', 'khoa110303@gmail.com', 'Bình Định'),
+(3, 'Nguyễn Công Hiến', 'conghien', '123', '0912347283', 'conghien@gmail.com', 'TP.HCM'),
+(4, 'Trần Chính', 'tranchinh', '123', '0927348291', 'tranchinh@gmail.com', 'TP.HCM'),
+(5, 'Dương Đức Quý', 'ducquy', '123', '0972634738', 'ducquy1234@gmail.com', 'Hà Nội'),
+(6, 'Lê Tuấn Khang', 'tuankhang123', '123', '0928475839', 'tuankhanf@gmail.com', 'Hải Phòng'),
+(7, 'Trịnh Trần Phương Tuấn', 'jack97', '123', '0972536721', 'j97@gmail.com', 'Bến Tre'),
+(8, 'Hà Anh Tuấn', 'anhtuan', '123', '0983647384', 'haanhtuan@gmail.com', 'Bình Dương'),
+(9, 'Nguyễn Trường Giang', 'truonggiang', '123', '0937463273', 'truonggiangk17iuh@gmail.com', 'TP.HCM'),
+(10, 'Mỹ Duyên', 'myduyen12', 'Duyen*1234', '0374839234', 'myduyen@gmail.com', 'Đà Nẵng');
 
 -- --------------------------------------------------------
 
@@ -124,7 +175,7 @@ CREATE TABLE `nhanvien` (
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `MaLoai` int(11) DEFAULT NULL,
-  `SDT` int(11) NOT NULL,
+  `SDT` varchar(11) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `DiaChi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -134,9 +185,9 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Username`, `Password`, `MaLoai`, `SDT`, `Email`, `DiaChi`) VALUES
-(1, 'Quản Lý Dream', 'quanly1', '123', 1, 986356372, 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
-(4, 'Nguyễn Văn A', 'nhanvienbanhang', '123', 2, 346356372, 'nhanvien@gmal.com', '26 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
-(5, 'Bếp', 'nhanvienbep', '123', 3, 986356372, 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM');
+(1, 'Quản Lý Dream', 'quanly1', '123', 1, '0986356372', 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
+(4, 'Nguyễn Văn A', 'nhanvienbanhang', '123', 2, '0346356372', 'nhanvien@gmal.com', '26 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM'),
+(5, 'Nhân viên Bếp', 'nhanvienbep', '123', 3, '0986356372', 'quanlydream@gmal.com', '13 Nguyễn Văn Linh, phường 3, quận 7, TP.HCM');
 
 -- --------------------------------------------------------
 
@@ -198,10 +249,23 @@ INSERT INTO `sanpham` (`MaSP`, `IDLoaiSP`, `TenSP`, `img`, `dongia`, `MotaSP`) V
 --
 
 --
+-- Chỉ mục cho bảng `chitiethoadon`
+--
+ALTER TABLE `chitiethoadon`
+  ADD PRIMARY KEY (`MaHD`,`MaSP`);
+
+--
 -- Chỉ mục cho bảng `danhmucsp`
 --
 ALTER TABLE `danhmucsp`
   ADD PRIMARY KEY (`IDLoaiSP`);
+
+--
+-- Chỉ mục cho bảng `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD PRIMARY KEY (`MaHD`),
+  ADD KEY `MaKH` (`MaKH`);
 
 --
 -- Chỉ mục cho bảng `khachhang`
@@ -245,7 +309,7 @@ ALTER TABLE `danhmucsp`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaKH` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `loainv`
@@ -268,6 +332,12 @@ ALTER TABLE `sanpham`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`);
 
 --
 -- Các ràng buộc cho bảng `nhanvien`

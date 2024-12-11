@@ -46,7 +46,7 @@
             <td>'.($i+1).'</td>
             <td>'.$nhanvien[$i]['MaNV'].'</td>
             <td>'.$nhanvien[$i]['TenNV'].'</td>
-            <td>'.'0'.$nhanvien[$i]['SDT'].'</td>
+            <td>'.$nhanvien[$i]['SDT'].'</td>
             <td>'.$nhanvien[$i]['TenLoai'].'</td>
             <td>'.$nhanvien[$i]['Email'].'</td>
             <td>

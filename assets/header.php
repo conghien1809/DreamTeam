@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/carousel.css" />
     <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/chitietsanpham.css" />
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/dangky.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="inner-cart">
-          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="index.php?page=giohang"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </header>
