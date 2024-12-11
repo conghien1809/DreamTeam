@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="inner-cart">
-          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="index.php?page=giohang"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
     </header>

@@ -42,12 +42,12 @@
                     <form id="loginForm" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="tendn"><b>Tên đăng nhập</b></label>
-                            <input type="text" class="form-control" id="tendn" name="tk" placeholder="Nhập tên đăng nhập">
+                            <input type="text" class="form-control" id="tendn" name="tk" placeholder="Nhập tên đăng nhập" required>
                             <span class="text-danger" id="errortk"></span>
                         </div>
                         <div class="form-group">
                             <label for="matkhau"><b>Mật khẩu</b></label>
-                            <input type="password" class="form-control" id="matkhau" name="mk" placeholder="Nhập mật khẩu">
+                            <input type="password" class="form-control" id="matkhau" name="mk" placeholder="Nhập mật khẩu" required>
                             <span class="text-danger" id="errormk"></span>
                         </div>
                         <div class="text-center">

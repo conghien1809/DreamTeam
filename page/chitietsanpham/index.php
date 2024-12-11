@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="assets/css/chitietsanpham.css">
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST)) {
